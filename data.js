@@ -815,7 +815,12 @@ var APP_DATA = {
         "yaw": 0,
         "fov": 1.5707963267948966
       },
-      "linkHotspots": [
+      "linkHotspots": [ {
+        "yaw": 3.0080398136351985,
+        "pitch": 0.32373062676256836,
+        "rotation": 0,
+        "target": "11-studio-celling-wooden-beam"
+      },
         {
           "yaw": -0.612794103035009,
           "pitch": -0.39334856378694205,
@@ -921,6 +926,12 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
+          "yaw": 3.0080398136351985,
+          "pitch": 0.32373062676256836,
+          "rotation": 0,
+          "target": "11-studio-celling-wooden-beam"
+        },
+        {
           "yaw": -0.612794103035009,
           "pitch": -0.39334856378694205,
           "rotation": 0,
@@ -1024,6 +1035,12 @@ var APP_DATA = {
         "fov": 1.5707963267948966
       },
       "linkHotspots": [
+        {
+          "yaw": 3.0080398136351985,
+          "pitch": 0.32373062676256836,
+          "rotation": 0,
+          "target": "11-studio-celling-wooden-beam"
+        },
         {
           "yaw": -0.612794103035009,
           "pitch": -0.39334856378694205,
@@ -1129,6 +1146,12 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
+          "yaw": 3.0080398136351985,
+          "pitch": 0.32373062676256836,
+          "rotation": 0,
+          "target": "11-studio-celling-wooden-beam"
+        },
+        {
           "yaw": -0.612794103035009,
           "pitch": -0.39334856378694205,
           "rotation": 0,
@@ -1232,6 +1255,12 @@ var APP_DATA = {
         "fov": 1.5707963267948966
       },
       "linkHotspots": [
+        {
+          "yaw": 3.0080398136351985,
+          "pitch": 0.32373062676256836,
+          "rotation": 0,
+          "target": "11-studio-celling-wooden-beam"
+        },
         {
           "yaw": -0.612794103035009,
           "pitch": -0.39334856378694205,
@@ -1337,6 +1366,12 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
+          "yaw": 3.0080398136351985,
+          "pitch": 0.32373062676256836,
+          "rotation": 0,
+          "target": "11-studio-celling-wooden-beam"
+        },
+        {
           "yaw": -0.612794103035009,
           "pitch": -0.39334856378694205,
           "rotation": 0,
@@ -1440,6 +1475,12 @@ var APP_DATA = {
         "fov": 1.5707963267948966
       },
       "linkHotspots": [
+        {
+          "yaw": 3.0080398136351985,
+          "pitch": 0.32373062676256836,
+          "rotation": 0,
+          "target": "11-studio-celling-wooden-beam"
+        },
         {
           "yaw": -0.612794103035009,
           "pitch": -0.39334856378694205,
@@ -1545,6 +1586,12 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
+          "yaw": 3.0080398136351985,
+          "pitch": 0.32373062676256836,
+          "rotation": 0,
+          "target": "11-studio-celling-wooden-beam"
+        },
+        {
           "yaw": -0.612794103035009,
           "pitch": -0.39334856378694205,
           "rotation": 0,
@@ -1648,6 +1695,12 @@ var APP_DATA = {
         "fov": 1.5707963267948966
       },
       "linkHotspots": [
+        {
+          "yaw": 3.0080398136351985,
+          "pitch": 0.32373062676256836,
+          "rotation": 0,
+          "target": "11-studio-celling-wooden-beam"
+        },
         {
           "yaw": -0.612794103035009,
           "pitch": -0.39334856378694205,
@@ -1753,6 +1806,12 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
+          "yaw": 3.0080398136351985,
+          "pitch": 0.32373062676256836,
+          "rotation": 0,
+          "target": "11-studio-celling-wooden-beam"
+        },
+        {
           "yaw": -0.612794103035009,
           "pitch": -0.39334856378694205,
           "rotation": 0,
@@ -1856,6 +1915,12 @@ var APP_DATA = {
         "fov": 1.5707963267948966
       },
       "linkHotspots": [
+        {
+          "yaw": 3.0080398136351985,
+          "pitch": 0.32373062676256836,
+          "rotation": 0,
+          "target": "11-studio-celling-wooden-beam"
+        },
         {
           "yaw": -0.612794103035009,
           "pitch": -0.39334856378694205,
@@ -1961,6 +2026,12 @@ var APP_DATA = {
       },
       "linkHotspots": [
         {
+          "yaw": 3.0080398136351985,
+          "pitch": 0.32373062676256836,
+          "rotation": 0,
+          "target": "11-studio-celling-wooden-beam"
+        },
+        {
           "yaw": -0.612794103035009,
           "pitch": -0.39334856378694205,
           "rotation": 0,
@@ -2064,6 +2135,12 @@ var APP_DATA = {
         "fov": 1.5707963267948966
       },
       "linkHotspots": [
+        {
+          "yaw": 3.0080398136351985,
+          "pitch": 0.32373062676256836,
+          "rotation": 0,
+          "target": "11-studio-celling-wooden-beam"
+        },
         {
           "yaw": -0.612794103035009,
           "pitch": -0.39334856378694205,
