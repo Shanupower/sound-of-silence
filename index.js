@@ -259,8 +259,19 @@
     // Create image element.
     var icon = document.createElement('img');
     switch(hotspot.target){
-      case '20-studio-interior-code-2':icon.src = "img/brown code_1.png"; break;
-
+      case '1-studio-interior-code-10':icon.src = "img/color10.png"; break;
+      case '2-studio-interior-code-15' : icon.src = 'img/color15.png'; break;
+      case '3-studio-interior-code-8' : icon.src = 'img/color8.png'; break;
+      case '4-studio-interior-code-3' : icon.src = 'img/color3.png'; break;
+      case '5-studio-interior-code-22' : icon.src = 'img/color22.png'; break;
+      case '6-studio-interior-code-21' : icon.src = 'img/color21.png'; break;
+      case '7-studio-interior-code-28' : icon.src = 'img/color28.png'; break;
+      case '8-studio-interior-code-37' : icon.src = 'img/color37.png'; break;
+      case '9-studio-interior-code-42' : icon.src = 'img/color42.png'; break;
+      case '10-studio-interior-code-19' : icon.src = 'img/color19.png'; break;
+      case '11-studio-interior-code-18' : icon.src = 'img/color18.png'; break;
+      case '12-studio-interior-code-17' : icon.src = 'img/color17.png'; break;
+      case '20-studio-interior-code-2' : icon.src = 'img/color2.png'; break;
       default: icon.src = 'img/link.png';
     }
     

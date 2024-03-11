@@ -84,7 +84,7 @@ body.multiple-scenes.mobile #titleBar {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-
+  display: none;
   -moz-user-select: text;
   -webkit-user-select: text;
   -ms-user-select: text;
@@ -209,6 +209,7 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   padding: 5px;
   background-color: rgb(103,115,131);
   background-color: rgba(103,115,131,0.8);
+  display: none;
 }
 
 .mobile #sceneListToggle {
@@ -254,6 +255,7 @@ body.fullscreen-enabled.mobile #autorotateToggle {
 }
 
 #sceneList {
+  display: none;
   position: absolute;
   top: 0;
   left: -220px;
@@ -356,13 +358,14 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
 }
 
 .link-hotspot-icon {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   cursor: pointer;
 }
 
 .link-hotspot-tooltip {
   position: absolute;
+  visibility: hidden;
   left: 100%;
   top: 14px; /* ( 60 - (16 + 2*8) ) / 2 */
 
