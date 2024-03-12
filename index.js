@@ -63,7 +63,8 @@
   // Viewer options.
   var viewerOpts = {
     controls: {
-      mouseViewMode: data.settings.mouseViewMode
+      mouseViewMode: data.settings.mouseViewMode,
+      deviceOrientationControlMethod : enabled 
     }
   };
 
@@ -90,7 +91,7 @@
 
     // Create link hotspots.
     data.linkHotspots.forEach(function(hotspot) {
-      var element = createLinkHotspotElement(hotspot);
+      var element = createLinkHotspotElement(hotspot,data.id);
       scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch });
     });
 
@@ -161,7 +162,8 @@
     });
   }
   });
-
+  // DOM elements for Device orientation control 
+  var toggleElement = document.getElementById('toggleDeviceOrientation');
   // DOM elements for view controls.
   var viewUpElement = document.querySelector('#viewUp');
   var viewDownElement = document.querySelector('#viewDown');
@@ -173,6 +175,8 @@
   // Dynamic parameters for controls.
   var velocity = 0.7;
   var friction = 3;
+ 
+  
 
   // Associate view controls with elements.
   var controls = viewer.controls();
@@ -182,7 +186,9 @@
   controls.registerMethod('rightElement', new Marzipano.ElementPressControlMethod(viewRightElement,  'x',  velocity, friction), true);
   controls.registerMethod('inElement',    new Marzipano.ElementPressControlMethod(viewInElement,  'zoom', -velocity, friction), true);
   controls.registerMethod('outElement',   new Marzipano.ElementPressControlMethod(viewOutElement, 'zoom',  velocity, friction), true);
-
+   // Associate view controls with Device orientation
+  var deviceOrientationControlMethod = new DeviceOrientationControlMethod();
+  controls.registerMethod('deviceOrientation', deviceOrientationControlMethod);
   function sanitize(s) {
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;');
   }
@@ -248,8 +254,59 @@
       startAutorotate();
     }
   }
+  
+  // Set up control for enabling/disabling device orientation.
+  var enabled = false
+function requestPermissionForIOS() {
+  window.DeviceOrientationEvent.requestPermission()
+    .then(response => {
+      if (response === 'granted') {
+        enableDeviceOrientation()
+      }
+    }).catch((e) => {
+      console.error(e)
+    })
+}
 
-  function createLinkHotspotElement(hotspot) {
+function enableDeviceOrientation() {
+  deviceOrientationControlMethod.getPitch(function (err, pitch) {
+    if (!err) {
+      view.setPitch(pitch);
+    }
+  });
+  controls.enableMethod('deviceOrientation');
+  enabled = true;
+  toggleElement.className = 'enabled';
+}
+
+function enable() {
+  if (window.DeviceOrientationEvent) {
+    if (typeof (window.DeviceOrientationEvent.requestPermission) == 'function') {
+      requestPermissionForIOS()
+    } else {
+      enableDeviceOrientation()
+    }
+  }
+}
+
+function disable() {
+  controls.disableMethod('deviceOrientation');
+  enabled = false;
+  toggleElement.className = '';
+}
+
+function toggle() {
+  if (enabled) {
+    disable();
+  } else {
+    enable();
+  }
+}
+
+toggleElement.addEventListener('click', toggle);
+
+
+  function createLinkHotspotElement(hotspot,id) {
 
     // Create wrapper element to hold icon and tooltip.
     var wrapper = document.createElement('div');
@@ -271,7 +328,15 @@
       case '10-studio-interior-code-19' : icon.src = 'img/color19.png'; break;
       case '11-studio-interior-code-18' : icon.src = 'img/color18.png'; break;
       case '12-studio-interior-code-17' : icon.src = 'img/color17.png'; break;
-      case '20-studio-interior-code-2' : icon.src = 'img/color2.png'; break;
+      case '20-studio-interior-code-2' : 
+      if(id == "9-studio-celling-circle" || id == "10-studio-celling-hexa" || id == "11-studio-celling-wooden-beam" || id == "12-studio-celling-bewelled")
+      {
+        icon.src = 'img/link.png'; break;
+      }
+      else{
+        icon.src = 'img/color2.png'; break;
+      }
+      
       default: icon.src = 'img/link.png';
     }
     
