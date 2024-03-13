@@ -188,6 +188,7 @@
   controls.registerMethod('outElement',   new Marzipano.ElementPressControlMethod(viewOutElement, 'zoom',  velocity, friction), true);
    // Associate view controls with Device orientation
   var deviceOrientationControlMethod = new DeviceOrientationControlMethod();
+  var controls = viewer.controls();
   controls.registerMethod('deviceOrientation', deviceOrientationControlMethod);
   function sanitize(s) {
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;');
@@ -275,6 +276,7 @@ function enableDeviceOrientation() {
     }
   });
   controls.enableMethod('deviceOrientation');
+  console.log("enabled");
   enabled = true;
   toggleElement.className = 'enabled';
 }
