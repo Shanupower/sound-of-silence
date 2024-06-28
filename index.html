@@ -11,14 +11,14 @@
       padding: 0;
       overflow: hidden;
       font-family: 'Arial', sans-serif;
+      background: #000;
     }
-    .center 
-	{
- 	 display: block;
- 	 margin-left: auto;
-	  margin-right: auto;
- 	 width: 50%;
-	}
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
     #video-container {
       position: fixed;
       top: 0;
@@ -38,25 +38,29 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: none; /* Initially hidden to show loading progress */
     }
 
     #progress-bar-container {
       position: absolute;
-      top: 70%; /* Adjusted top position for better visibility */
+      bottom: 20%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50%;
+      transform: translate(-50%, 50%);
+      width: 80%;
+      max-width: 600px;
+      height: 20px;
+      background: #333;
+      border-radius: 10px;
+      overflow: hidden;
     }
 
     #progress-bar {
       width: 100%;
-      height: 20px;
+      height: 100%;
       border-radius: 10px;
       overflow: hidden;
       background-color: #333;
     }
-	
+
     #progress-value {
       width: 0;
       height: 100%;
@@ -66,16 +70,12 @@
 
     #loading-progress {
       position: absolute;
-      top: 50%;
+      top: 45%;
       left: 50%;
       transform: translate(-50%, -50%);
       color: #fff;
       font-size: 24px;
-      display: none; /* Initially hidden */
-    }
-
-    #loading-progress span {
-      display: block; /* Ensure the progress value is visible */
+      text-align: center;
     }
 
     #content {
@@ -85,28 +85,38 @@
       justify-content: center;
       height: 100vh;
       text-align: center;
-      z-index: 1; /* Place above the video */
+      z-index: 1; 
+      opacity: 0;
     }
 
     #headline {
       font-size: 36px;
       margin-bottom: 20px;
       opacity: 0;
-      animation: fadeInUp 1s ease-out 0.5s forwards;
+      animation: fadeInUp 1s ease-out 1s forwards;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
     #start-button {
-      background-color: #3498db;
+      background: linear-gradient(135deg, #ff7b00, #ff4c00);
       color: #fff;
-      font-size: 18px;
-      padding: 15px 30px;
+      font-size: 20px;
+      padding: 20px 40px;
       border: none;
       cursor: pointer;
       border-radius: 5px;
       margin-top: 15px;
       opacity: 0;
       animation: fadeInUp 1s ease-out 2s forwards, pulse 1.5s ease-in-out 2s infinite;
-      display: none; /* Initially hidden */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      text-transform: uppercase;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    #start-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     }
 
     #start-button i {
@@ -129,7 +139,7 @@
         transform: scale(1);
       }
       50% {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
     }
 
@@ -142,13 +152,15 @@
         font-size: 16px;
         padding: 12px 24px;
       }
+      #progress-bar-container {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
   <div id="video-container">
     <video id="video-background" autoplay muted loop playsinline>
-      <!-- Replace 'Studio render.mp4' with your actual video file -->
       <source src="Studio render.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -161,12 +173,10 @@
   </div>
 
   <div id="content">
-    <img src=""SOS-NEW-LOGO-9.png"" class="center">
-    <h1 id="headline">Welcome to Sound of silence </h1>
-    <br>
+    <img src="SOS-NEW-LOGO-9.png" class="center" alt="Logo">
+    <h1 id="headline">Welcome to Sound of Silence</h1>
     <button onclick="location.href='pano.html'" type="button" id="start-button">
-      <i class="fas fa-play"></i> Experince Now
-      
+      <i class="fas fa-play"></i> Experience Now
     </button>
   </div>
 
@@ -180,7 +190,7 @@
     // Simulate loading progress
     let currentProgress = 0;
     const progressInterval = setInterval(() => {
-      currentProgress += 5;
+      currentProgress += 10;
       progressBar.style.width = `${currentProgress}%`;
       progressText.textContent = `${currentProgress}%`;
 
@@ -190,7 +200,7 @@
         video.style.display = 'block';
         document.getElementById('content').style.opacity = '1';
         // Start button animation after the video has loaded
-        startButton.style.display = 'flex';
+        startButton.style.display = 'inline-block';
         startButton.style.animation = 'fadeInUp 1s ease-out 0.5s forwards, pulse 1.5s ease-in-out 0.5s infinite';
         // Hide the progress bar and text
         setTimeout(() => {

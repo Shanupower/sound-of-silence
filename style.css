@@ -857,3 +857,19 @@ body.view-control-buttons .viewControlButton {
 .viewControlButton-6 {
   margin-left: 105px;
 }
+
+#clickTogo {
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 70px;
+  background-color: rgba(103, 115, 131, 0.8);
+  color: white;
+  text-align: center;
+  line-height: 50px; 
+  text-decoration: none;
+  font-size: 12px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}

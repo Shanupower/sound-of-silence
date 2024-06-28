@@ -474,7 +474,17 @@ toggleElement.addEventListener('click', toggle);
     return null;
   }
 
+  document.getElementById('clickTogo').addEventListener('click', function() {
+    const link = document.getElementById('clickTogo');
+    if (link.textContent.trim() === 'Go To Recording') {
+        link.textContent = 'Go To Auditorium';
+        switchScene(findSceneById("11-studio-celling-wooden-beam")); 
+    } else {
+        link.textContent = 'Go To Recording';
+        switchScene(findSceneById("0-9"));
+    }
+});
+
   // Display the initial scene.
   switchScene(scenes[0]);
-
 })();
